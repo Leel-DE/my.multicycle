@@ -1,61 +1,246 @@
-# TypeScript Next.js example
+# My Multicycle - Internal Platform
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+A comprehensive modular web-based internal platform for bicycle repair shop management, built with modern best practices.
 
-## Deploy your own
+## 🚀 Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+### Core Modules
 
-## How to use it?
+#### 1. Knowledge Base Module
+- **Searchable Articles**: Find articles by title, content, or tags
+- **Rich Text Editor**: TipTap-based editor with formatting options
+- **Categories & Tags**: Organize content with categories and tags
+- **Public/Private Toggle**: Control article visibility
+- **Markdown Support**: Write content in Markdown format
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+#### 2. Video Training Module ("Tool Park")
+- **Video Library**: Upload and manage training videos
+- **Custom Video Player**: Advanced controls with playback speed
+- **Tools & Materials**: Track required tools and materials per video
+- **Role Assignment**: Assign videos to specific user roles
+- **Progress Tracking**: Monitor video completion
 
+#### 3. Company Hierarchy Module
+- **Organizational Tree**: Visual representation of company structure
+- **Position Management**: Define roles, responsibilities, and requirements
+- **Linked Resources**: Connect positions to relevant articles and videos
+- **User Assignment**: Assign team members to positions
+
+#### 4. User Management Module
+- **Role-Based Access Control**: Manage permissions by user role
+- **Activity Tracking**: Monitor user engagement and progress
+- **Profile Management**: User profiles with activity logs
+- **Team Overview**: Comprehensive team management interface
+
+### Technical Features
+
+- **Modern Stack**: React + TypeScript + Tailwind CSS
+- **Responsive Design**: Desktop-first with mobile optimization
+- **Modular Architecture**: Isolated modules with clear separation
+- **Component-Based**: Reusable UI components
+- **File-Based Routing**: Next.js routing system
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Next.js** - React framework with file-based routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **TipTap** - Rich text editor
+- **Lucide React** - Icon library
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
+
+### Development Tools
+- **ESLint** - Code linting
+- **Prettier** - Code formatting
+- **TypeScript** - Static type checking
+
+## 📁 Project Structure
+
+```
+my.multicycle/
+├── components/
+│   ├── ui/                 # Reusable UI components
+│   │   ├── Button.tsx
+│   │   ├── Card.tsx
+│   │   ├── Input.tsx
+│   │   └── VideoPlayer.tsx
+│   ├── layout/             # Layout components
+│   │   ├── Layout.tsx
+│   │   ├── Header.tsx
+│   │   └── Sidebar.tsx
+│   └── forms/              # Form components
+│       └── RichTextEditor.tsx
+├── modules/                # Feature modules
+│   ├── knowledge-base/
+│   ├── video-training/
+│   ├── company-hierarchy/
+│   └── user-management/
+├── pages/                  # Next.js pages
+│   ├── index.tsx           # Dashboard
+│   ├── knowledge-base/
+│   ├── video-training/
+│   ├── company-hierarchy/
+│   └── user-management/
+├── interfaces/             # TypeScript interfaces
+├── utils/                  # Utility functions
+└── styles/                 # Global styles
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd my.multicycle
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   Navigate to `http://localhost:3000`
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run type-check` - Run TypeScript type checking
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: Indigo (#4F46E5)
+- **Secondary**: Gray (#6B7280)
+- **Success**: Green (#10B981)
+- **Warning**: Yellow (#F59E0B)
+- **Error**: Red (#EF4444)
+
+### Typography
+- **Headings**: Inter font family
+- **Body**: System font stack
+- **Code**: Monospace font
+
+### Components
+- **Cards**: Consistent card design with shadows
+- **Buttons**: Multiple variants (primary, secondary, outline, ghost, danger)
+- **Forms**: Styled form inputs with validation states
+- **Navigation**: Responsive sidebar with mobile support
+
+## 🔐 Authentication & Permissions
+
+### User Roles
+- **Admin**: Full system access
+- **Manager**: Team and content management
+- **Mechanic**: Access to knowledge base and videos
+- **Trainee**: Limited access to training materials
+- **Viewer**: Read-only access
+
+### Permission System
+- Role-based access control (RBAC)
+- Module-level permissions
+- Content visibility controls
+- Activity logging
+
+## 📱 Responsive Design
+
+The platform is designed with a mobile-first approach:
+- **Desktop**: Full-featured interface with sidebar navigation
+- **Tablet**: Adapted layout with collapsible sidebar
+- **Mobile**: Stacked layout with hamburger menu
+
+## 🔧 Configuration
+
+### Environment Variables
+Create a `.env.local` file:
+```env
+NEXT_PUBLIC_APP_NAME=My Multicycle
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+### Tailwind Configuration
+The project uses a custom Tailwind configuration with:
+- Custom color palette
+- Extended spacing scale
+- Component-specific utilities
+
+## 🧪 Testing
+
+### Running Tests
 ```bash
-npx create-next-app --example with-typescript with-typescript-app
+npm run test
 ```
 
+### Test Coverage
 ```bash
-yarn create next-app --example with-typescript with-typescript-app
+npm run test:coverage
 ```
 
+## 📦 Deployment
+
+### Build for Production
 ```bash
-pnpm create next-app --example with-typescript with-typescript-app
+npm run build
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Deploy to Vercel
+1. Connect your repository to Vercel
+2. Configure environment variables
+3. Deploy automatically on push to main branch
 
-## Notes
+## 🤝 Contributing
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-```shell
-npm install --save-dev typescript
-```
+## 📄 License
 
-```shell
-yarn install --save-dev typescript
-```
+This project is licensed under the MIT License.
 
-```shell
-pnpm install --save-dev typescript
-```
+## 🆘 Support
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+For support and questions:
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation
 
-```shell
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+## 🔄 Roadmap
 
-```shell
-yarn install --save-dev @types/react @types/react-dom @types/node
-```
+### Planned Features
+- [ ] Real-time notifications
+- [ ] Advanced search with filters
+- [ ] Video upload functionality
+- [ ] Export/import functionality
+- [ ] Advanced analytics dashboard
+- [ ] Mobile app companion
+- [ ] Integration with external tools
+- [ ] Multi-language support
 
-```shell
-pnpm install --save-dev @types/react @types/react-dom @types/node
-```
+### Performance Improvements
+- [ ] Image optimization
+- [ ] Code splitting
+- [ ] Caching strategies
+- [ ] Database optimization
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+---
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
-
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+Built with ❤️ for bicycle repair shops worldwide
